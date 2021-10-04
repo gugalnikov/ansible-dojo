@@ -5,7 +5,7 @@
   - name: Run the equivalent of "apt-get update" as a separate step
     apt:
       update_cache: yes
-      ignore_errors: yes
+    ignore_errors: yes
   - name: Install apache packages
     apt:
       name: apache2
