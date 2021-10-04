@@ -1,0 +1,12 @@
+---
+- name: This sets up an apache2 webserver
+  hosts: localhost
+  tasks:
+  - name: Install apache packages
+    yum:
+      name: apache2
+      state: present
+  - name: ensure apache2 is running
+    service:
+      name: apache2
+      state: started
