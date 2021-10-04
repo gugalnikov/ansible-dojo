@@ -3,9 +3,10 @@
   hosts: localhost
   tasks:
   - name: Install apache packages
-    yum:
+    apt:
       name: apache2
       state: present
+      update_cache: yes
   - name: ensure apache2 is running
     service:
       name: apache2
