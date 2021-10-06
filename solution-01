@@ -1,16 +1,16 @@
 ---
-- name: This sets up an apache2 webserver
+- name: This sets up a webserver
   hosts: localhost
   tasks:
   - name: Run the equivalent of "apt-get update" as a separate step
     apt:
       update_cache: yes
     ignore_errors: yes
-  - name: Install apache packages
+  - name: Install packages
     apt:
-      name: apache2
+      name: nginx
       state: present
-  - name: ensure apache2 is running
+  - name: ensure service is running
     service:
-      name: apache2
+      name: nginx
       state: started
